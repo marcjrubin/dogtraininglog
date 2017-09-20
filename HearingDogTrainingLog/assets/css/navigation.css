@@ -1,0 +1,22 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 1, 2016, 11:55:45 PM
+    Author     : marcrubin
+*/
+
+#navHeader {
+  background-color: #f2f2f2;  
+  border-bottom: 1px solid #B2B2B2; 
+}
+
+.navHome {
+    opacity: 0.8;
+}
+
+#navBar header h1 {
+  font-family: 'Maven Pro', sans-serif;
+}

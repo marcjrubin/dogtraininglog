@@ -1,0 +1,74 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 15, 2016, 2:46:16 PM
+    Author     : Marc Rubin
+*/
+
+#formEntry {
+    width: 1000px;
+}
+
+legend {
+    font-size: 18px;
+}
+
+table {
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    padding: 5px;
+}
+
+td.fieldName {
+    text-align: right;
+}
+
+td.inputField {
+    text-align: left;
+}
+
+input, textarea {
+    border-radius: 3px;
+    height: 25px;   
+    font-size: 18px;
+}
+
+input:focus, input:hover {
+    background-color: #E3E3E3;
+}
+
+.submitButton {
+    text-align: right;
+}
+
+.styleButton {
+    background-color: #040D63;
+    color: #f2f2f2;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    padding: 20px 32px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    line-height: 2px;
+}
+
+.styleDropDownList {
+    border-radius: 6px;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px 32px;
+}

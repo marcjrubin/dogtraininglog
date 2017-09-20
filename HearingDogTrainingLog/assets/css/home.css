@@ -1,0 +1,134 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 1, 2016, 11:53:14 PM
+    Author     : marcrubin
+*/
+
+body {  
+  color: #040D63;
+}
+
+a {
+  color: #040D63;
+}
+
+#backgroundImage header {
+  background-color: #263d36;
+  background-image: url("/assets/img/LabsChasingBalls.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  line-height: 1.2;
+  margin-top: -400px;
+  padding: 25vw 2em;
+  text-align: center;
+}
+
+.running {
+  background-color: #263d36;
+  background-image: url("/assets/img/LabsRunning.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  line-height: 1.2;
+  text-align: center;  
+}
+
+.stairs {
+  background-color: #263d36;
+  background-image: url("/assets/img/LabsOnStairs.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  line-height: 1.2;
+  text-align: center; 
+}
+
+.swimming {
+  background-color: #263d36;
+  background-image: url("/assets/img/LabsSwimming.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  line-height: 1.2;
+  text-align: center; 
+}
+
+.garden {
+  background-color: #263d36;
+  background-image: url("/assets/img/GraduateInGarden.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  line-height: 1;
+  text-align: center; 
+}
+
+#navFullBody {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+}
+
+#navBody {
+    width: 1000px;
+    margin: auto;
+}
+
+#navBody nav {    
+    margin-top: -25px;
+    padding: 0;
+    padding-right: 42px;
+    height: 50px;
+}
+
+#navBody nav a {
+    padding: 10px 75px;
+    background-color: #040D63;
+    color: #f2f2f2;
+    font-weight: 700;    
+}
+
+.right {
+    border-right: #030941 solid 1px;
+}
+
+.left {
+    border-left: #051185 solid 1px;
+}
+
+main {
+    margin: 0 auto;
+    width: 1000px;
+    margin-top: 15px;
+}
+
+section {
+    float: left;
+    margin: 5px;
+    border: 3px solid #515151;
+    width: 484px;
+    height: 200px;    
+    text-align: center;    
+}
+
+section#contact {
+    margin-bottom: 150px;
+}
+
+section h2 {
+    padding-top: 25px;
+    color: white;
+    font-weight: 900;
+    font-size: 48px;
+}
+
+#signup {
+    clear: left;
+}
+

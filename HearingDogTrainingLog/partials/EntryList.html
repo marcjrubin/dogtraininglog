@@ -1,0 +1,89 @@
+<div>
+<script src="assets/js/navigation.js" type="text/javascript"></script>
+
+<main> 
+    <aside></aside>
+
+    <section id="formEntry">
+        <h2>New Log Entry</h2>
+        <form id="logentry" name="logentry" ng-submit="processLog(logentry.$valid)" novalidate>
+
+            <!-- DATE --> 
+            <div id="date-group" class="log-group">
+                <label>Date: </label>
+                <input type="text" name="today" ng-model="logData.today" ng-focus="changeLabel('Filter:ng-focus')" ng-blur="changeLabel('Filter:ng-blur')" required>
+                <span class="help-block" ng-show=""></span>
+            </div>
+
+            <!-- TRAINING -->
+            <div id="training-group" class="log-group">
+                <label>Training: </label>
+                <input type="text" name="log" ng-model="logData.log" ng-focus="changeLabel('Filter:ng-focus')" ng-blur="changeLabel('Filter:ng-blur')" required>
+                <span class="help-block" ng-show=""></span>
+            </div>
+
+            <!-- SUCCESS? --> 
+            <div>
+                <label>Success?: 
+                    <select name="status" ng-model="logData.status" required>
+                        <option value="">-- Choose Yes or No --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </label> 
+                <span class="help-block" ng-show=""></span>
+            </div>
+
+            <br>
+
+            <!-- SUBMIT BUTTON -->
+            <button type="button" class="btn btn-success active" ng-click="addLog()" ng-disabled="logentry.$invalid">
+                <span class="glyphicon glyphicon-flash"></span> Submit
+            </button>
+
+        </form>
+
+        <br> 
+
+        <label>{{displayLabelText}}</label>
+        
+        <hr>
+
+        <h2>Logbook</h2>
+
+        <div class="container-fluid">
+            <h3>Search for specific entry</h3> 
+
+            <form class="form-inline">
+                <input type="text" class="form-control" ng-model="filterText">
+                <button class="btn btn-default" ng-click="resetFilter()">Reset</button>
+            </form>
+
+            <br>
+
+            <ul class="list-group" ng-repeat="historyItem in filterHistory">
+                <li class="list-group-item">{{historyItem}}</li>
+            </ul>
+
+            <br>
+            <hr>
+
+            <h3>Log Entries</h3>
+            <div class="panel panel-default" ng-mouseover="changeLabel('Mouseover:review')" ng-repeat="log in logs | filter:filterText">
+                <div class="panel-heading">
+                    Date   Log   Status
+                </div>
+                <div class="panel-body" ng-show="error == null">
+                    <a href="#/entrylist/{{rating.id}}" >
+                        {{log.today}}   {{log.log}}   {{log.status}}
+                    </a>
+                </div>
+                <div class="panel-body" ng-show="error != null">
+                    {{error.errorMessage}}
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+</div>

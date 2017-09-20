@@ -1,0 +1,47 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 15, 2016, 3:01:43 PM
+    Author     : Marc Rubin
+*/
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+}
+
+th, td {
+  height: 20px;
+  padding-left: 10px;  
+}
+
+th, td {
+    padding: 10px 22px;
+    background-color: #ccc;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+.dateCol {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.successCol {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.dateSize {
+    width: 25px;
+}
+
+.successSize {
+    width: 15px;
+}

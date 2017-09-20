@@ -1,0 +1,53 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 22, 2016, 12:50:27 AM
+    Author     : Marc Rubin
+*/
+
+#loginbox {
+    position: fixed;
+    margin-left: 850px;
+}
+
+#loginform {
+  padding: 10px 15px;
+  background-color: #BFBFBF;
+  border: 5px solid darkgrey; 
+  width: 300px;  
+  border-radius: 10px;
+  display: none;
+}
+
+#loginform h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#loginform input {
+  margin: 5px;
+  border-radius: 3px;
+  height: 25px;   
+  font-size: 18px;
+}
+
+#loginform input:focus, input:hover {
+    background-color: #E3E3E3;
+}
+
+#loginform .styleButton {
+    background-color: #040D63;
+    color: #f2f2f2;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    padding: 20px 32px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    line-height: 2px;
+}

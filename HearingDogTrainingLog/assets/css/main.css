@@ -1,0 +1,97 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 17, 2016, 11:51:47 PM
+    Author     : marcrubin
+*/
+
+body {    
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  font-weight: normal;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+p, a, li, th, td {
+  font-size: 18px;
+}
+
+#navHeader {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+#navBar {
+  width: 1000px;
+  margin: auto;
+}
+
+#navBar header h1 {
+  margin: 0;
+  padding: 10px 0px;
+  float: left;
+}
+
+nav {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav a {
+  float: right;    
+  padding: 20px 10px;
+}
+
+main {
+  width: 1000px;
+  margin: auto;
+}
+
+section {
+    
+}
+
+section p { 
+  text-align: justify;  
+}
+
+#footerBar {
+  margin: 0;
+  padding: 0;
+  height: 100px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+footer {
+  width: 1000px;
+  height: 100px;
+  margin: auto;
+  margin-bottom: -80px;
+  text-align: center;
+  font-size: 14px;
+  margin-top:25px;
+}
+
+footer p {
+  font-size: 14px;  
+}
