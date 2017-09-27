@@ -13,10 +13,6 @@ and open the template in the editor.
   border-bottom: 1px solid #B2B2B2; 
 }
 
-.navHome {
-    opacity: 0.8;
-}
-
 #navBar header h1 {
   font-family: 'Maven Pro', sans-serif;
 }
