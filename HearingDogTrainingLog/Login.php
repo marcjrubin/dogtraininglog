@@ -33,11 +33,11 @@ and open the template in the editor.
                 <form id="login" name="login" method="post" action="Verify.php">
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username" placeholder="Username">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                     </div>
                     <button type="submit" id="button" name="button" class="btn btn-lg">Login</button>
                 </form>                

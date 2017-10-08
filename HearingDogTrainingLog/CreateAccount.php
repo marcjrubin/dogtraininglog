@@ -18,21 +18,12 @@ $user->username = trim($_POST["username"]);
 $user->password = trim($_POST["password"]);
 $user->confirmpwd = trim($_POST["confirmpwd"]);
 
-$hash = hash('sha256', $user->password);
-
-function createSalt()
-{
-    $text = md5(uniqid(rand(), true));
-    return substr($text, 0, 3);
-}
-
-$salt = createSalt();
-$pwd = hash('sha256', $salt . $hash);
+$passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
 $isValid = $user->validate();
 
 if ($isValid) {
-    insertUser($user->first, $user->last, $user->emailaddress, $user->username, $pwd, $salt);
+    insertUser($user->first, $user->last, $user->emailaddress, $user->username, $passwordHash);
 } else {
     header('Location: CreateNewAccount.php');
 }

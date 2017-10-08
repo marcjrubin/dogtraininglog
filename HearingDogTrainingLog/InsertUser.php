@@ -8,11 +8,11 @@
 
 include 'DBConnection.php';
 
-function insertUser($userFirst, $userLast, $userEmail, $userName, $userPassword, $userSalt) {
+function insertUser($userFirst, $userLast, $userEmail, $userName, $userPassword) {
     try {
         $connect = getConnection();
-        $sql = "INSERT INTO Member (firstName, lastName, email, username, password, salt) " 
-                . "VALUES ('$userFirst', '$userLast', '$userEmail', '$userName', '$userPassword', '$userSalt')";
+        $sql = "INSERT INTO Member (firstName, lastName, email, username, password) " 
+                . "VALUES ('$userFirst', '$userLast', '$userEmail', '$userName', '$userPassword')";
         $connect->exec($sql);
         $connect = null;
     } catch (Exception $ex) {

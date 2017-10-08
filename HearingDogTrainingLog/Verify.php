@@ -13,25 +13,25 @@ $password = $_POST['password'];
 
 $conn = new PDO('mysql:host=localhost;dbname=DogTrainingLog', 'dog', 'Dog<3Owner');
 
-$sql = "SELECT password FROM Member WHERE username = '" . $username . "'";
-$result = $conn->query($sql);
+$sql = "SELECT password FROM Member WHERE username = :username";
+$result = $conn->prepare($sql);
+$result->bindParam(":username", $username);
+$result->execute();
 
-if($result->num_rows == 0) // User not found. So, redirect to Login.php
+$num_of_rows = $result->rowCount();
+
+if($num_of_rows == 0) // User not found. So, redirect to Login.php
 {
     header('Location: Login.php');
 }
 
-//$passwordHash = $result->fetch(PDO::FETCH_ASSOC);
-//$hash = hash('sha256', $userData['salt'] . hash('sha256', $password));
+$pwd = $result->fetch(PDO::FETCH_ASSOC);
 
-$pwd = $result->fetch_assoc();
-
-//if($hash != $userData['password']) // Incorrect password. So, redirect to Login.php
-if($password == $pwd['password'])
+if(password_verify($password, $pwd['password'])) // Incorrect password. So, redirect to Login.php
 {
     header('Location: LogEntry.php');
 } 
 else 
 {
-    header('Location: SoundWork.php');
+    header('Location: Login.php');
 }
