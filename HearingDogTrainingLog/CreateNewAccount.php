@@ -31,7 +31,7 @@ and open the template in the editor.
             </header>            
             
             <section id="formEntry">
-                <form id="createacct" name="createacct" action="CreateAccount.php" method="post" onsubmit="return validateForm()">
+                <form id="createacct" name="createacct" action="CreateAccount2.php" method="post" onsubmit="return validateForm()">
                     <fieldset>
                         <legend>Enter your information</legend>
                         <table>

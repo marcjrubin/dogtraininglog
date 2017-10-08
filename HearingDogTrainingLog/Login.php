@@ -30,7 +30,7 @@ and open the template in the editor.
         <main>
             
             <section id="loginForm">                
-                <form id="login" name="login" action="Verify.php" method="post">
+                <form id="login" name="login" method="post" action="Verify.php">
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username" placeholder="Username">
@@ -39,7 +39,7 @@ and open the template in the editor.
                         <label for="password">Password</label>
                         <input type="password" class="form-control" id="password" placeholder="Password">
                     </div>
-                    <button type="submit" id="button" class="btn btn-lg">Login</button>
+                    <button type="submit" id="button" name="button" class="btn btn-lg">Login</button>
                 </form>                
             </section>
             
