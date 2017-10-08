@@ -8,16 +8,16 @@
 
 include 'DBConnection.php';
 
-function insertUser($userFirst, $userLast, $userEmail, $userName, $userPassword) {
+function insertUser($userFirst, $userLast, $userEmail, $userName, $userPassword, $userSalt) {
     try {
         $connect = getConnection();
-        $sql = "INSERT INTO useraccount (namefirst, namelast, email, user, pwd) " 
-                . "VALUES ('$userFirst', '$userLast', '$userEmail', '$userName', '$userPassword')";
+        $sql = "INSERT INTO Member (firstName, lastName, email, username, password, salt) " 
+                . "VALUES ('$userFirst', '$userLast', '$userEmail', '$userName', '$userPassword', '$userSalt')";
         $connect->exec($sql);
         $connect = null;
     } catch (Exception $ex) {
         echo "EXCEPTION : Insert failed : " . $ex->getMessage();
     } finally {
-        header('Location: LogEntry.php');
+        header('Location: Login.php');
     }
 }

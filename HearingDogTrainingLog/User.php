@@ -45,6 +45,10 @@
                 return false;
             }
             
+            if(strlen($this->username) > 30) {
+                return false;
+            }                
+            
             return true;            
         }
     }

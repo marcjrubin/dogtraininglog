@@ -8,9 +8,9 @@
 
 function getConnection() {
     $servername = "localhost";
-    $dbname = "hearingdogtraininglog";
-    $username = "root";
-    $password = "";
+    $dbname = "DogTrainingLog";
+    $username = "dog";
+    $password = "Dog<3Owner";
     
     try {
         $connection = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
