@@ -10,7 +10,7 @@ var logApp = angular.module('logApp', ['ngRoute']);
 logApp.config(['$routeProvider', function($routeProvider) {
         $routeProvider.
             when('/entrylist', {
-                templateUrl:'partials/EntryList.html',
+                templateUrl:'partials/EntryList.php',
                 controller:'logController'
             }).
             when('/entrylist/:listID', {

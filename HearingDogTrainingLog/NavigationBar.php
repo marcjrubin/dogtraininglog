@@ -5,7 +5,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-    
+
+ /*<a class="menuHover" href="Login.php">Login</a>*/  
+
     echo '<div id="navHeader">
             <div id="navBar">
                 
@@ -17,7 +19,7 @@
                   <a class="menuHover" href="CreateNewAccount.php">Register</a>
                   <a class="menuHover" href="Contact.php">Contact</a>
                   <a class="menuHover" href="About.php">About</a>
-                  <a class="menuHover" href="Login.php">Login</a>
+                  
                   <a class="menuHover" href="index.php">Home</a>    
                 </nav>
                 

@@ -1,3 +1,13 @@
+<?php
+    session_start();
+?>
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+ 
 <div>
 <script src="assets/js/navigation.js" type="text/javascript"></script>
 
@@ -7,11 +17,13 @@
     
     <section id="formEntry">
         
-        <p style="float: right;"><a href="index.php">Logout</a></p>
+        <p style="float: right;"><a href="Logout.php">Logout</a></p>
         
         <?php 
-            echo "<h2>Welcome, " . $_SESSION["firstname"] . " " . $_SESSION["lastname"] . "!";
+            echo "<h1>Welcome, " . $_SESSION["firstname"] . " " . $_SESSION["lastname"] . "!</h1>";
         ?>
+        
+        <hr>
         
         <h2>New Log Entry</h2>        
         <form id="logentry" name="logentry" ng-submit="processLog(logentry.$valid)" novalidate>
@@ -53,9 +65,9 @@
 
         </form>
 
-        <br> 
+<!--        <br> 
 
-        <label>{{displayLabelText}}</label>
+        <label>{{displayLabelText}}</label>-->
         
         <hr>
 
@@ -97,3 +109,4 @@
     </section>
 </main>
 </div>
+

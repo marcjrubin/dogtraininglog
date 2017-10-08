@@ -21,6 +21,24 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="assets/js/parallax.min.js" type="text/javascript"></script>
+        
+        <style>
+            .content-container h1 {
+                text-align: center;
+            }
+            
+            .content-container p {
+                text-align: center;
+            }
+            
+            .content-container {                
+                height: 350px;
+            }
+            
+            h1 {
+                margin-top: 75px;
+            }
+        </style>
     </head>
     <body>
         <?php 
@@ -31,9 +49,9 @@ and open the template in the editor.
         
         <section class="content-container">
             <div class="content-body">
-                <h1>Login</h1>
+                <h1>Login</h1><br>
                 <p>
-                    <a href="Login.php" class="btn btn-primary btn-lg active">Login</a><br>
+                    <a href="Login.php" class="btn btn-primary btn-lg active">Login</a><br><br>
                     Login to enter your training log
                 </p>
             </div>
@@ -43,9 +61,10 @@ and open the template in the editor.
         
         <section class="content-container">
             <div class="content-body">
-                <h1>About</h1>
+                <h1>About</h1><br>
                 <p>
-                    A place where dog trainers and handlers log the training sessions
+                    <a href="About.php" class="btn btn-primary btn-lg active">About</a><br><br>
+                    Learn more about the site
                 </p>
             </div>
         </section>
@@ -54,9 +73,10 @@ and open the template in the editor.
         
         <section class="content-container">
             <div class="content-body">
-                <h1>Contact</h1>
+                <h1>Contact</h1><br>
                 <p>
-                    Contact Us
+                    <a href="Contact.php" class="btn btn-primary btn-lg active">Contact</a><br><br>
+                    Get in touch with us for questions and comments
                 </p>
             </div>
         </section>
@@ -65,8 +85,9 @@ and open the template in the editor.
         
         <section class="content-container">
             <div class="content-body">
-                <h1>Register</h1>
+                <h1>Register</h1><br>
                 <p>
+                    <a href="CreateNewAccount.php" class="btn btn-primary btn-lg active">Register</a><br><br>
                     Create an account and start logging away 
                 </p>
             </div>

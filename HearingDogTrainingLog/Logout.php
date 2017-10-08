@@ -6,8 +6,9 @@
  * and open the template in the editor.
  */
 
-echo '<div id="footerBar">
-        <footer>                
-            Dog Training Log &copy;2016-<span id="currentyear"></span>            
-        </footer>
-    </div>';
+    session_start();    
+    session_unset;    
+    session_destroy();
+    
+    header("Location: index.php");
+    

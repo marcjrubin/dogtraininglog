@@ -64,13 +64,8 @@ and open the template in the editor.
               </figcaption>
             </figure>
             
-            <h3 class="hover"><a href="#">Create a new account</a></h3>
-            <h3 class="hover"><a href="#">Sign up with Facebook Login</a></h3>
-            <h3 class="hover"><a href="#">Sign up with Twitter Login</a></h3>
+            <h3 class="hover"><a href="CreateNewAccount.php">Create a new account</a></h3>
 
-            <br />
-
-            <h3 class="hover"><a href='Bio.php'>Developer's Bio</a></h3> 
         </section>
 
         <aside>

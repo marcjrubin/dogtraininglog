@@ -27,7 +27,8 @@ $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
 $conn = new PDO('mysql:host=localhost;dbname=DogTrainingLog', 'dog', 'Dog<3Owner');
 
-$query = $conn->prepare('INSERT INTO Member (firstName, lastName, email, username, password) VALUES (?, ?, ?, ?, ?)');
+$query = $conn->prepare('INSERT INTO Member (firstName, lastName, email, username, password) VALUES (?, ?, ?, ?, ?);'
+        . 'CREATE TABLE ' . $firstname . $lastname . ' (LogEntryDate datetime not null, Commands varchar(50) not null, Success boolean not null)');
 $query->execute(array($firstname, $lastname, $emailaddress, $username, $passwordHash));
 
 header('Location: Login.php');
