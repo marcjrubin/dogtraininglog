@@ -11,7 +11,7 @@ include 'DBConnection.php';
 function insertLog($datelog, $training, $success) {
     try {
         $connect = getConnection();
-        $sql = "INSERT INTO rubinmarctable (dateoflog, log, success) "
+        $sql = "INSERT INTO " . $_SESSION["firstname"] . $_SESSION["lastname"] . " (dateoflog, log, success) "
                 . "VALUES ('$datelog', '$training', '$success')";
         $connect->exec($sql);
         $connect = null;

@@ -22,15 +22,6 @@ logApp.config(['$routeProvider', function($routeProvider) {
             });
 }]);
 
-// unit testing experimentation 
-logApp.controller('logTestController', ['$scope', function($scope) {
-        $scope.logTest = {
-            todayDate: '1/1/2016',
-            logEntry: 'microwave beep',
-            statusYesNo: 'Yes'
-        };
-}]);
-
 logApp.controller('logDetailsController', ['$scope', '$routeParams', function($scope, $routeParams){
     var listID = $routeParams.listID;
     $scope.listID = listID;
@@ -38,16 +29,18 @@ logApp.controller('logDetailsController', ['$scope', '$routeParams', function($s
 
 logApp.controller('logController', ['$scope', '$http', function($scope, $http) {
         
-        $scope.changeLabel = function(labelText) {
-            $scope.displayLabelText = labelText;
-        };
-        
+//        $scope.changeLabel = function(labelText) {
+//            $scope.displayLabelText = labelText;
+//        };
+                
     // add new row with new data input dynamically
-    $scope.logs = [
-        {id:1, today:'1/1/2016', log:'type of training', status:'Yes'},
-        {id:2, today:'1/8/2016', log:'zipper', status:'Yes'},
-        {id:3, today:'1/10/2016', log:'doorbell', status:'No'}
-    ];    
+    $scope.logs = [];
+    
+//    $scope.logs = [
+//        {id:1, today:'1/1/2016', log:'type of training', status:'Yes'},
+//        {id:2, today:'1/8/2016', log:'zipper', status:'Yes'},
+//        {id:3, today:'1/10/2016', log:'doorbell', status:'No'}
+//    ];    
       
     $scope.filterHistory = [];    
     $scope.resetFilter = function() {
@@ -58,7 +51,9 @@ logApp.controller('logController', ['$scope', '$http', function($scope, $http) {
     $scope.resetFilter();
     $scope.filterHistory = [];
           
-    $scope.logData = {};        
+    $scope.logData = {};    
+    
+    var oriLog = angular.copy($scope.logFields);
 
     // AJAX & send data to server
     $scope.processLog = function() {            
@@ -86,6 +81,10 @@ logApp.controller('logController', ['$scope', '$http', function($scope, $http) {
         };
 
         $scope.logs.push(log);
+        
+        $scope.logData = angular.copy(oriLog);
+        $scope.logentry.$setPristine();
+        
     };        
 }]);
 

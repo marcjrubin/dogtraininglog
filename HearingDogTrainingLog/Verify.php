@@ -11,7 +11,7 @@
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$conn = new PDO('mysql:host=localhost;dbname=DogTrainingLog', 'dog', 'Dog<3Owner');
+$conn = new PDO('mysql:host=localhost;dbname=DogTrainingLog', '', '');
 
 $sql = "SELECT firstname, lastname, password FROM Member WHERE username = :username";
 $result = $conn->prepare($sql);

@@ -59,10 +59,14 @@
             <br>
 
             <!-- SUBMIT BUTTON -->
-            <button type="button" class="btn btn-success active" ng-click="addLog()" ng-disabled="logentry.$invalid">
-                <span class="glyphicon glyphicon-flash"></span> Submit
+            <button type="button" class="btn btn-primary" ng-click="addLog()" ng-disabled="logentry.$invalid">
+                Submit
+            </button>      
+            
+            <!-- CANCEL BUTTON -->
+            <button type="reset" class="btn btn-primary" ng-disabled="logentry.$invalid">
+                Reset
             </button>
-
         </form>
 
 <!--        <br> 
@@ -74,7 +78,7 @@
         <h2>Log Entry List</h2>
 
         <div class="container-fluid">
-            <h3>Search for specific entry</h3> 
+            <!--<h3>Search for specific entry</h3> 
 
             <form class="form-inline">
                 <input type="text" class="form-control" ng-model="filterText">
@@ -88,18 +92,33 @@
             </ul>
 
             <br>
-            <hr>
+            <hr>-->
 
-            <h3>Log Entries</h3>
+            <!--<h3>Log Entries</h3>-->
+            
             <div class="panel panel-default" ng-mouseover="changeLabel('Mouseover:review')" ng-repeat="log in logs | filter:filterText">
                 <div class="panel-heading">
-                    Date   Log   Status
+                    <a href="#/entrylist/{{rating.id}}" >Log #{{log.id}}</a>
                 </div>
-                <div class="panel-body" ng-show="error == null">
+                
+                <table class="table">
+                        <tr style="text-align: center;">
+                            <th>Date</th>
+                            <th>Command</th>
+                            <th>Success</th>
+                        </tr>
+                        <tr ng-show="error == null">
+                            <td>{{log.today}}</td>
+                            <td>{{log.log}}</td>
+                            <td>{{log.status}}</td>
+                        </tr>
+                </table>
+
+<!--                <div class="panel-body" ng-show="error == null">
                     <a href="#/entrylist/{{rating.id}}" >
                         {{log.today}}   {{log.log}}   {{log.status}}
                     </a>
-                </div>
+                </div>                -->
                 <div class="panel-body" ng-show="error != null">
                     {{error.errorMessage}}
                 </div>

@@ -25,7 +25,7 @@ if (strlen($username) > 30)
 
 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-$conn = new PDO('mysql:host=localhost;dbname=DogTrainingLog', 'dog', 'Dog<3Owner');
+$conn = new PDO('mysql:host=localhost;dbname=DogTrainingLog', '', '');
 
 $query = $conn->prepare('INSERT INTO Member (firstName, lastName, email, username, password) VALUES (?, ?, ?, ?, ?);'
         . 'CREATE TABLE ' . $firstname . $lastname . ' (LogEntryDate datetime not null, Commands varchar(50) not null, Success boolean not null)');
