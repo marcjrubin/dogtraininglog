@@ -29,14 +29,14 @@ and open the template in the editor.
     
     <body>
         <?php
-            include 'NavigationBar.php';
+            include 'includes/NavigationBar.php';
         ?>  
         
         <div ng-view>
         </div>
         
         <?php
-            include 'Footer.php';
+            include 'includes/Footer.php';
         ?>
     </body>
 </html>

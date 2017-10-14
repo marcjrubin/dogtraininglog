@@ -22,7 +22,7 @@ and open the template in the editor.
     <body onload="currentYearCopyright()">          
 
         <?php
-            include 'NavigationBar.php';
+            include 'includes/NavigationBar.php';
         ?>        
         
         <script src="assets/js/navigation.js" type="text/javascript"></script>
@@ -80,7 +80,7 @@ and open the template in the editor.
     </main> 
   
     <?php 
-        include 'Footer.php';
+        include 'includes/Footer.php';
     ?>
   
 </body>

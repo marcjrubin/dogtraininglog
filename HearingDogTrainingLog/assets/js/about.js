@@ -100,8 +100,8 @@ function createNewAccount() {
   if (first !== '' && last !== '' && email !== '' && username !== '' && pwd !== '' && confirm !== '') {
     clearMessages();
     if (pwd === confirm)  {      
-      var save = ' * Saved * ';
-      document.getElementById('saveMsg').innerHTML = save;
+      //var save = ' * Saved * ';
+      //document.getElementById('saveMsg').innerHTML = save;
       return true;
     } else {
       var error = '* Passwords do not match';

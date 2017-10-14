@@ -6,8 +6,8 @@
  * and open the template in the editor.
  */
 
-include 'LogObject.php';
-include 'InsertLog.php';
+include 'files/objects/LogObject.php';
+include 'files/db/InsertLog.php';
 
 $log = new Log();
 

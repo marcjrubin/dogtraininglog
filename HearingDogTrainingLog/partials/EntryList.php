@@ -17,7 +17,7 @@
     
     <section id="formEntry">
         
-        <p style="float: right;"><a href="Logout.php">Logout</a></p>
+        <p style="float: right;"><a href="files/functions/Logout.php">Logout</a></p>
         
         <?php 
             echo "<h1>Welcome, " . $_SESSION["firstname"] . " " . $_SESSION["lastname"] . "!</h1>";

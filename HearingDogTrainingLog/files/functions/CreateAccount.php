@@ -6,8 +6,8 @@
  * and open the template in the editor.
  */
 
-include 'User.php';
-include 'InsertUser.php';
+include 'files/objects/User.php';
+include 'files/db/InsertUser.php';
 
 $user = new User();
 

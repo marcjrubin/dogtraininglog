@@ -28,13 +28,13 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            include 'NavigationBar.php';
+            include 'includes/NavigationBar.php';
         ?>
         
         <main>
             
             <section id="loginForm">                
-                <form id="login" name="login" method="post" action="Verify.php">
+                <form id="login" name="login" method="post" action="files/functions/Verify.php">
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username" name="username" placeholder="Username">
@@ -50,7 +50,7 @@ and open the template in the editor.
         </main>
         
         <?php 
-            include 'Footer.php';
+            include 'includes/Footer.php';
         ?>
     </body>
 </html>

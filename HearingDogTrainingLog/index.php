@@ -42,7 +42,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php 
-            include 'NavigationBar.php';
+            include 'includes/NavigationBar.php';
         ?>
         
         <div class="parallax-container" data-parallax="scroll" data-image-src="./assets/img/GraduateInGarden.jpg"></div>
@@ -105,7 +105,7 @@ and open the template in the editor.
         
 
         <?php 
-            include 'Footer.php';
+            include 'includes/Footer.php';
         ?>
         
     </body>

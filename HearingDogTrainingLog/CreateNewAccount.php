@@ -1,3 +1,44 @@
+<?php
+
+    if(isset($_POST['createacct'])) {
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $secretkey = "6LchaDQUAAAAAIjTfFPikus_YDMjjkjfuXlpcsOd";
+        
+        $response = file_get_contents($url."?secret=".$secretkey."&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']);        
+        $data = json_decode($response);
+        
+        if(isset($data->success) AND $data->success == true) {
+            // True - what happens when user is verified 
+            $firstname = trim($_POST["firstname"]);
+            $lastname = trim($_POST["lastname"]);
+            $emailaddress = trim($_POST["emailAddress"]);
+            $username = trim($_POST["username"]);
+            $password = trim($_POST["password"]);
+            $confirmpwd = trim($_POST["confirmpwd"]);
+
+            if ($password != $confirmpwd) {
+                header('Location: CreateNewAccount.php');
+            }
+
+            if (strlen($username) > 30) {
+                header('Location: CreateNewAccount.php');
+            }
+
+            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+            $conn = new PDO('mysql:host=localhost;dbname=dogtraininglogsystem', 'doglog', 'dog<3owner');
+
+            $query = $conn->prepare('INSERT INTO members (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?);');
+            $query->execute(array($firstname, $lastname, $emailaddress, $username, $passwordHash));
+
+            header('Location: Login.php');
+        } else {
+            // False - display error 
+            header('Location: CreateNewAccount.php?CaptchaFail=True');
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -13,15 +54,15 @@ and open the template in the editor.
         <link href="assets/css/navigation.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/footer.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/about.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/form.css" rel="stylesheet" type="text/css"/> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="assets/js/scripts.js" type="text/javascript"></script>
         <script src="assets/js/about.js" type="text/javascript"></script>
-        <link href="assets/css/form.css" rel="stylesheet" type="text/css"/> 
         <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
     <body onload="currentYearCopyright()">
         <?php
-            include 'NavigationBar.php';
+            include 'includes/NavigationBar.php';
         ?>
         
         <script src="assets/js/navigation.js" type="text/javascript"></script>
@@ -32,9 +73,12 @@ and open the template in the editor.
             </header>            
             
             <section id="formEntry">
-                <form id="createacct" name="createacct" action="CreateAccount2.php" method="post" onsubmit="return validateForm()">                    
+                <form id="createacct" name="createacct" action="" method="post" onsubmit="return validateForm()">                    
                     <fieldset>
-                        <legend>Enter your information</legend>     
+                        <legend>Enter your information</legend>    
+                        <?php if(isset($_GET['CaptchaFail'])){ ?>
+                            <div>Captcha Failed. Please try again!</div>
+                        <?php } ?>                        
                         <div id="html_element">
                             <table>
                                 <tr>
@@ -74,10 +118,10 @@ and open the template in the editor.
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td id="saveMsg"></td>
+                                    <td></td>
                                     <td colspan="2" class="submitButton">                                    
                                         <input type="reset" value="Clear all fields" class="styleButton" onclick="clearFields(this)">
-                                        <input type="submit" value="Create New Account" class="styleButton" onclick="return createNewAccount()">                                    
+                                        <input type="submit" id="createacct" name="createacct" value="Create New Account" class="styleButton" onclick="return createNewAccount()">                                    
                                     </td>
                                 </tr>
                             </table>
@@ -88,7 +132,7 @@ and open the template in the editor.
         </main>
         
         <?php 
-            include 'Footer.php';
+            include 'includes/Footer.php';
         ?>
         
     </body>
