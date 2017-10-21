@@ -22,18 +22,18 @@ $num_of_rows = $result->rowCount();
 
 if($num_of_rows == 0) // User not found. So, redirect to Login.php
 {
-    header('Location: Login.php');
+    header('Location: /Login.php');
 }
 
 $qry = $result->fetch(PDO::FETCH_ASSOC);
 
 if(password_verify($password, $qry['password'])) // Incorrect password. So, redirect to Login.php
 {
-    header('Location: LogEntry.php');
+    header('Location: /LogEntry.php');
     $_SESSION["firstname"] = $qry['firstname'];  
     $_SESSION["lastname"] = $qry['lastname'];
 } 
 else 
 {
-    header('Location: Login.php');
+    header('Location: /Login.php');
 }

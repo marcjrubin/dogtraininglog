@@ -14,6 +14,7 @@ and open the template in the editor.
         <title>Log Entry <?php echo ''; ?></title>
         <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
         <link href="assets/css/main.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/about.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/form.css" rel="stylesheet" type="text/css"/>
@@ -23,8 +24,11 @@ and open the template in the editor.
         <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-route.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="semantic/dist/semantic.min.js"></script>
         <script src="assets/js/scripts.js" type="text/javascript"></script>   
         <script src="assets/js/addnewentry.js" type="text/javascript"></script>
+        <script src="assets/json/commands.js" type="text/javascript"></script>
     </head>
     
     <body>

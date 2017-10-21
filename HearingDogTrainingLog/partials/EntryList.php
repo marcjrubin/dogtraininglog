@@ -39,7 +39,11 @@
                 <!-- TRAINING -->
                 <div id="training-group" class="log-group" style="float: left;">
                     <label>&nbsp;&nbsp;&nbsp;Training: </label>
-                    <input type="text" name="log" ng-model="logData.log" ng-focus="changeLabel('Filter:ng-focus')" ng-blur="changeLabel('Filter:ng-blur')" required>
+<!--                    <select name="log" ui-dropdown options="{on: 'hover'}" ng-model="logData.log" uiDropdownChange="onDropChangeSingle($event)" class="ui fluid dropdown" required>
+                            <option ngFor="let option of dropOptions" value="{{option.value}}">{{option.text}}</option>
+                    </select>                                   -->
+                    <div name="log" dropdown-select="commandsOption" ng-model="logData.log" dropdown-model="commandsSelected" dropdown-item-label="text"></div>
+<!--                    <input type="text" name="log" ng-model="logData.log" ng-focus="changeLabel('Filter:ng-focus')" ng-blur="changeLabel('Filter:ng-blur')" required>-->
                     <span class="help-block" ng-show=""></span>
                 </div>
 

@@ -96,12 +96,11 @@ function createNewAccount() {
   var username = document.getElementById('username').value;
   var pwd = document.getElementById('password').value;
   var confirm = document.getElementById('confirmpwd').value;
+  var format = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   
   if (first !== '' && last !== '' && email !== '' && username !== '' && pwd !== '' && confirm !== '') {
-    clearMessages();
+    //clearMessages();
     if (pwd === confirm)  {      
-      //var save = ' * Saved * ';
-      //document.getElementById('saveMsg').innerHTML = save;
       return true;
     } else {
       var error = '* Passwords do not match';
@@ -126,7 +125,12 @@ function createNewAccount() {
     if (email === null || email === '') {
       var emailError = '* Enter your email address';
       document.getElementById('emailmsg').innerHTML = emailError;
-    }
+    }          
+        
+    if (!format.test(email.value)) {
+       var emailFormat = '* Use correct email format';
+       document.getElementById('emailmsg').innerHTML = emailFormat; 
+    }     
     
     if (username === null || username === '') {
       var error = '* Enter your username';

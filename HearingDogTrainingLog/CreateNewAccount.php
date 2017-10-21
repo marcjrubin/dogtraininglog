@@ -17,11 +17,11 @@
             $confirmpwd = trim($_POST["confirmpwd"]);
 
             if ($password != $confirmpwd) {
-                header('Location: CreateNewAccount.php');
+                header('Location: /CreateNewAccount.php');
             }
 
             if (strlen($username) > 30) {
-                header('Location: CreateNewAccount.php');
+                header('Location: /CreateNewAccount.php');
             }
 
             $passwordHash = password_hash($password, PASSWORD_DEFAULT);
@@ -31,10 +31,10 @@
             $query = $conn->prepare('INSERT INTO members (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?);');
             $query->execute(array($firstname, $lastname, $emailaddress, $username, $passwordHash));
 
-            header('Location: Login.php');
+            header('Location: /Login.php');
         } else {
             // False - display error 
-            header('Location: CreateNewAccount.php?CaptchaFail=True');
+            header('Location: /CreateNewAccount.php?CaptchaFail=True');
         }
     }
 ?>
@@ -73,7 +73,7 @@ and open the template in the editor.
             </header>            
             
             <section id="formEntry">
-                <form id="createacct" name="createacct" action="" method="post" onsubmit="return validateForm()">                    
+                <form id="createacct" name="createacct" action="" method="post" onsubmit="return validateForm()" autocomplete="off">                    
                     <fieldset>
                         <legend>Enter your information</legend>    
                         <?php if(isset($_GET['CaptchaFail'])){ ?>
@@ -93,7 +93,7 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <td class="fieldName">Email</td>
-                                    <td class="inputField"><input type="email" id="emailAddress" name="emailAddress" form="createacct" size="30" maxlength="50" onchange="emailUpdated()"></td>
+                                    <td class="inputField"><input type="email" pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" id="emailAddress" name="emailAddress" form="createacct" size="30" maxlength="50" onchange="emailUpdated()"></td>
                                     <td id="emailmsg"></td>
                                 </tr>
                                 <tr>

@@ -6,6 +6,7 @@
 
 /* AngularJS */ 
 var logApp = angular.module('logApp', ['ngRoute']);
+var menuApp = angular.module('menu', ['ngDropdowns'])
 
 logApp.config(['$routeProvider', function($routeProvider) {
         $routeProvider.
@@ -85,7 +86,8 @@ logApp.controller('logController', ['$scope', '$http', function($scope, $http) {
         $scope.logData = angular.copy(oriLog);
         $scope.logentry.$setPristine();
         
-    };        
+    };  
+    
 }]);
 
 
