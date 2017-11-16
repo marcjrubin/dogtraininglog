@@ -9,29 +9,52 @@
         
         if(isset($data->success) AND $data->success == true) {
             // True - what happens when user is verified 
-            $firstname = trim($_POST["firstname"]);
-            $lastname = trim($_POST["lastname"]);
-            $emailaddress = trim($_POST["emailAddress"]);
-            $username = trim($_POST["username"]);
-            $password = trim($_POST["password"]);
-            $confirmpwd = trim($_POST["confirmpwd"]);
-
-            if ($password != $confirmpwd) {
+//            $firstname = trim($_POST["firstname"]);
+//            $lastname = trim($_POST["lastname"]);
+//            $emailaddress = trim($_POST["emailAddress"]);
+//            $username = trim($_POST["username"]);
+//            $password = trim($_POST["password"]);
+//            $confirmpwd = trim($_POST["confirmpwd"]);
+//
+//            if ($password != $confirmpwd) {
+//                header('Location: /CreateNewAccount.php');
+//            }
+//
+//            if (strlen($username) > 30) {
+//                header('Location: /CreateNewAccount.php');
+//            }
+//
+//            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+//
+//            $conn = new PDO('mysql:host=localhost;dbname=dogtraininglogsystem', 'doglog', 'dog<3owner');
+//
+//            $query = $conn->prepare('INSERT INTO members (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?);');
+//            $query->execute(array($firstname, $lastname, $emailaddress, $username, $passwordHash));
+//
+//            header('Location: /Login.php');
+            
+            include 'files/objects/User.php';
+            include 'files/db/InsertUser.php';
+            
+            $user = new User();
+            
+            $user->first = trim($_POST["firstname"]);
+            $user->last = trim($_POST["lastname"]);
+            $user->emailaddress = trim($_POST["emailAddress"]);
+            $user->username = trim($_POST["username"]);
+            $user->password = trim($_POST["password"]);
+            $user->confirmpwd = trim($_POST["confirmpwd"]);
+            
+            $isValid = $user->validate();
+            
+            if ($isValid) {
+                $passwordHash = password_hash($user->password, PASSWORD_DEFAULT);
+                
+                insertUser($user->first, $user->last, $user->emailaddress, $user->username, $passwordHash);
+            } else {
                 header('Location: /CreateNewAccount.php');
             }
-
-            if (strlen($username) > 30) {
-                header('Location: /CreateNewAccount.php');
-            }
-
-            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
-            $conn = new PDO('mysql:host=localhost;dbname=dogtraininglogsystem', 'doglog', 'dog<3owner');
-
-            $query = $conn->prepare('INSERT INTO members (firstname, lastname, email, username, password) VALUES (?, ?, ?, ?, ?);');
-            $query->execute(array($firstname, $lastname, $emailaddress, $username, $passwordHash));
-
-            header('Location: /Login.php');
+            
         } else {
             // False - display error 
             header('Location: /CreateNewAccount.php?CaptchaFail=True');

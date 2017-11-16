@@ -21,14 +21,11 @@ and open the template in the editor.
         <link href="assets/css/logentry.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/navigation.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/footer.css" rel="stylesheet" type="text/css"/>
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-route.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script src="semantic/dist/semantic.min.js"></script>
         <script src="assets/js/scripts.js" type="text/javascript"></script>   
         <script src="assets/js/addnewentry.js" type="text/javascript"></script>
-        <script src="assets/json/commands.js" type="text/javascript"></script>
     </head>
     
     <body>

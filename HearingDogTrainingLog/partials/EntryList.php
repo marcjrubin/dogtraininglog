@@ -50,11 +50,21 @@
                 <!-- SUCCESS? --> 
                 <div id="success-group" class="log-group">
                     <label>&nbsp;&nbsp;&nbsp;Success?: 
-                        <select name="status" ng-model="logData.status" required>
+<!--                        <select name="status" ng-model="logData.status" required>
                             <option value="">-- Choose Yes or No --</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
-                        </select>
+                        </select>-->
+                        <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
                     </label> 
                     <span class="help-block" ng-show=""></span>
                 </div>            
