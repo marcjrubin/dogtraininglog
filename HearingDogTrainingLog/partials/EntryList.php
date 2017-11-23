@@ -30,48 +30,79 @@
 
             <div id="logForm">                
                 <!-- DATE --> 
-                <div id="date-group" class="log-group" style="float: left;">
-                    <label>Date: </label>
-                    <input type="text" name="today" ng-model="logData.today" ng-focus="changeLabel('Filter:ng-focus')" ng-blur="changeLabel('Filter:ng-blur')" required>
+                <div id="date-group" class="log-group">
+                    <label>Date</label>
+                    <div style="width: 250px;">
+                        <input type="text" class="form-control" id="datepicker" name="today" ng-model="logData.today" ng-focus="changeLabel('Filter:ng-focus')" ng-blur="changeLabel('Filter:ng-blur')" required>
+                    </div>
                     <span class="help-block" ng-show=""></span>
                 </div>
+                
+                <br>
 
                 <!-- TRAINING -->
-                <div id="training-group" class="log-group" style="float: left;">
-                    <label>&nbsp;&nbsp;&nbsp;Training: </label>
-<!--                    <select name="log" ui-dropdown options="{on: 'hover'}" ng-model="logData.log" uiDropdownChange="onDropChangeSingle($event)" class="ui fluid dropdown" required>
-                            <option ngFor="let option of dropOptions" value="{{option.value}}">{{option.text}}</option>
-                    </select>                                   -->
-                    <div name="log" dropdown-select="commandsOption" ng-model="logData.log" dropdown-model="commandsSelected" dropdown-item-label="text"></div>
-<!--                    <input type="text" name="log" ng-model="logData.log" ng-focus="changeLabel('Filter:ng-focus')" ng-blur="changeLabel('Filter:ng-blur')" required>-->
+                <div id="training-group" class="log-group">
+                    <label>Training</label>
+                    <div style="width: 250px;">
+                        <select class="form-control form-control-lg" name="log" ng-model="logData.log" ng-focus="changeLabel('Filter:ng-focus')" ng-blur="changeLabel('Filter:ng-blur')" required> 
+                            <option value="">-- Select Command --</option>
+                            <option value="Dog's Name">Dog's Name</option>
+                            <option value="Back">Back</option>
+                            <option value="Bed">Bed</option>
+                            <option value="Car">Car</option>
+                            <option value="Don't/No">Don't/No</option>
+                            <option value="Down">Down</option>
+                            <option value="Dress">Dress</option>
+                            <option value="Drop">Drop</option>
+                            <option value="Heel">Heel</option>
+                            <option value="Here">Here</option>
+                            <option value="Hurry">Hurry</option>
+                            <option value="Jump">Jump</option>
+                            <option value="Kennel">Kennel</option>
+                            <option value="Lap">Lap</option>
+                            <option value="Let's Go">Let's Go</option>
+                            <option value="Off">Off</option>
+                            <option value="Okay">Okay</option>
+                            <option value="Out">Out</option>
+                            <option value="Quiet">Quiet</option>
+                            <option value="Release">Release</option>
+                            <option value="Roll">Roll</option>
+                            <option value="Shake">Shake</option>
+                            <option value="Side">Side</option>
+                            <option value="Sit">Sit</option>
+                            <option value="Speak">Speak</option>
+                            <option value="Stand">Stand</option>
+                            <option value="Turn">Turn</option>
+                            <option value="Under">Under</option>
+                            <option value="Up">Up</option>
+                            <option value="Visit">Visit</option>
+                            <option value="Wait">Wait</option>
+
+                            <!-- include list of commands specifically - e.g. hearing dog or service dog -->
+
+                        </select>
+                    </div>
                     <span class="help-block" ng-show=""></span>
                 </div>
+                
+                <br>
 
                 <!-- SUCCESS? --> 
                 <div id="success-group" class="log-group">
-                    <label>&nbsp;&nbsp;&nbsp;Success?: 
-<!--                        <select name="status" ng-model="logData.status" required>
+                    <label>Success</label> 
+                    <div style="width: 250px;">
+                        <select class="form-control form-control-lg" name="status" ng-model="logData.status" required>
                             <option value="">-- Choose Yes or No --</option>
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
-                        </select>-->
-                        <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
-                    </label> 
+                        </select>
+                    </div>
                     <span class="help-block" ng-show=""></span>
                 </div>            
             </div>
 
             <br>
-
+            
             <!-- SUBMIT BUTTON -->
             <button type="button" class="btn btn-primary" ng-click="addLog()" ng-disabled="logentry.$invalid">
                 Submit
