@@ -6,7 +6,7 @@
 
 /* AngularJS */ 
 var logApp = angular.module('logApp', ['ngRoute']);
-var menuApp = angular.module('menu', ['ngDropdowns'])
+//var menuApp = angular.module('menu', ['ngDropdowns']);
 
 logApp.config(['$routeProvider', function($routeProvider) {
         $routeProvider.
@@ -27,6 +27,22 @@ logApp.controller('logDetailsController', ['$scope', '$routeParams', function($s
     var listID = $routeParams.listID;
     $scope.listID = listID;
 }]);
+
+logApp.directive('jqdatepicker', function() {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function (scope, element, attrs, ngModelCtrl) {
+            element.datepicker({
+                dateFormat: 'dd/mm/yy',
+                onSelect: function(date) {
+                    scope.logData.date = date;
+                    scope.$apply();
+                }
+            });
+        }
+    };
+});
 
 logApp.controller('logController', ['$scope', '$http', function($scope, $http) {
         
@@ -76,7 +92,7 @@ logApp.controller('logController', ['$scope', '$http', function($scope, $http) {
     $scope.addLog = function() {
         
         var log = {
-           today: $scope.logData.today,
+           date: $scope.logData.date,
            log: $scope.logData.log,
            status: $scope.logData.status
         };

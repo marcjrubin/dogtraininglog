@@ -32,6 +32,7 @@ if(password_verify($password, $qry['password'])) // Incorrect password. So, redi
     header('Location: /LogEntry.php');
     $_SESSION["firstname"] = $qry['firstname'];  
     $_SESSION["lastname"] = $qry['lastname'];
+    $_SESSION["username"] = $qry['username'];
 } 
 else 
 {

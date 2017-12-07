@@ -7,16 +7,26 @@
  */
 
 class Log {
+    public $username;
+    public $lognumber;
     public $dateoflog;
-    public $training;
+    public $command;
     public $success;
     
     function validateLog() {
+        if ($this->username === null || $this->username === '') {
+            return FALSE;
+        }
+        
+        if ($this->lognumber === null || $this->lognumber === '') {
+            return FALSE;
+        }
+        
         if ($this->dateoflog === null || $this->dateoflog === '') {
             return FALSE;
         }
         
-        if ($this->training === null || $this->training === '') {
+        if ($this->command === null || $this->command === '') {
             return FALSE;
         }
         

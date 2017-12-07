@@ -26,24 +26,29 @@
         <hr>
         
         <h2>New Log Entry</h2>        
-        <form id="logentry" name="logentry" ng-submit="processLog(logentry.$valid)" novalidate>
+        <form id="logentry" method="post" action="files/functions/LogEntryFile.php" name="logentry" ng-submit="processLog(logentry.$valid)" novalidate>
 
             <div id="logForm">                
                 <!-- DATE --> 
                 <div id="date-group" class="log-group">
                     <label>Date</label>
-                    <div style="width: 250px;">
-                        <input type="text" class="form-control" id="datepicker" name="today" ng-model="logData.today" ng-focus="changeLabel('Filter:ng-focus')" ng-blur="changeLabel('Filter:ng-blur')" required>
+                    <div style="width: 300px;">
+                        <input type="text" class="form-control" name="date" ng-model="logData.date" ng-focus="changeLabel('Filter:ng-focus')" ng-blur="changeLabel('Filter:ng-blur')" jqdatepicker required>
                     </div>
+                    <!--<script>
+                        $(function () {
+                            $("#datepicker").datepicker();
+                        });
+                    </script>-->
                     <span class="help-block" ng-show=""></span>
-                </div>
+                </div> 
                 
                 <br>
 
                 <!-- TRAINING -->
                 <div id="training-group" class="log-group">
                     <label>Training</label>
-                    <div style="width: 250px;">
+                    <div style="width: 300px;">
                         <select class="form-control form-control-lg" name="log" ng-model="logData.log" ng-focus="changeLabel('Filter:ng-focus')" ng-blur="changeLabel('Filter:ng-blur')" required> 
                             <option value="">-- Select Command --</option>
                             <option value="Dog's Name">Dog's Name</option>
@@ -83,14 +88,14 @@
                         </select>
                     </div>
                     <span class="help-block" ng-show=""></span>
-                </div>
+                </div> 
                 
                 <br>
 
                 <!-- SUCCESS? --> 
                 <div id="success-group" class="log-group">
                     <label>Success</label> 
-                    <div style="width: 250px;">
+                    <div style="width: 300px;">
                         <select class="form-control form-control-lg" name="status" ng-model="logData.status" required>
                             <option value="">-- Choose Yes or No --</option>
                             <option value="Yes">Yes</option>
@@ -104,12 +109,12 @@
             <br>
             
             <!-- SUBMIT BUTTON -->
-            <button type="button" class="btn btn-primary" ng-click="addLog()" ng-disabled="logentry.$invalid">
+            <button type="button" class="btn btn-primary" ng-click="addLog()">
                 Submit
             </button>      
             
             <!-- CANCEL BUTTON -->
-            <button type="reset" class="btn btn-primary" ng-disabled="logentry.$invalid">
+            <button type="reset" class="btn btn-primary">
                 Reset
             </button>
         </form>
@@ -153,7 +158,7 @@
                             <th>Success</th>
                         </tr>
                         <tr ng-show="error == null">
-                            <td>{{log.today}}</td>
+                            <td>{{log.date}}</td>
                             <td>{{log.log}}</td>
                             <td>{{log.status}}</td>
                         </tr>

@@ -8,14 +8,14 @@
 
 include 'files/db/DBConnection.php';
 
-function insertLog($datelog, $training, $success) {
+function insertLog($username, $lognumber, $datelog, $command, $success) {
     try {
         $connect = getConnection();
-        $sql = "INSERT INTO " . $_SESSION["firstname"] . $_SESSION["lastname"] . " (dateoflog, log, success) "
-                . "VALUES ('$datelog', '$training', '$success')";
+        $sql = "INSERT INTO members (username, lognumber, logentrydate, command, success) "
+                . "VALUES ('$username', '$lognumber', '$datelog', '$command', '$success')";
         $connect->exec($sql);
         $connect = null;
-    } catch (Exception $ex) {
+    } catch (PDOException $ex) {
         echo "EXCEPTION : Insert failed : " . $ex->getMessage();
     }
 }
