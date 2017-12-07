@@ -7,17 +7,17 @@
  */
 
 class Log implements JsonSerializable {
-    private $today = '', $log = '', $status = '';
+    private $date = '', $log = '', $status = '';
     
-    public function __construct($todayD, $logE, $statusYN) {
-        $this->today = $todayD;
+    public function __construct($dateD, $logE, $statusYN) {
+        $this->date = $dateD;
         $this->log = $logE;
         $this->status = $statusYN;
     }
     
     public function jsonSerialize() {
         return [
-            'today' => $this->today,
+            'date' => $this->date,
             'log' => $this->log,
             'status' => $this->status
         ]; 

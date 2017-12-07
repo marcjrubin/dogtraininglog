@@ -26,7 +26,8 @@
         <hr>
         
         <h2>New Log Entry</h2>        
-        <form id="logentry" method="post" action="files/functions/LogEntryFile.php" name="logentry" ng-submit="processLog(logentry.$valid)" novalidate>
+<!--        <form id="logentry" name="logentry" method="post" action="files/functions/LogEntryFile.php" ng-submit="processLog(logentry.$valid)" novalidate>-->
+        <form id="logentry" name="logentry" ng-submit="processLog(logentry.$valid)" novalidate>
 
             <div id="logForm">                
                 <!-- DATE --> 
@@ -109,12 +110,12 @@
             <br>
             
             <!-- SUBMIT BUTTON -->
-            <button type="button" class="btn btn-primary" ng-click="addLog()">
+            <button type="submit" class="btn btn-primary" ng-click="addLog()">
                 Submit
             </button>      
             
             <!-- CANCEL BUTTON -->
-            <button type="reset" class="btn btn-primary">
+            <button type="reset" class="btn btn-primary" ng-click="clearFields()">
                 Reset
             </button>
         </form>

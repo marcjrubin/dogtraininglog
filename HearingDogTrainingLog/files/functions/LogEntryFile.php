@@ -13,22 +13,20 @@ include 'files/db/InsertLog.php';
 
 $log = new Log();
 
-$log->username = $_SESSION["username"];
-$log->lognumber = "5";
+//$log->username = $_SESSION["username"];
+//$log->lognumber = $_POST["lognumber"];
 $log->dateoflog = $_POST["date"];
-$log->training = $_POST["log"];
+$log->command = $_POST["log"];
 $log->success = $_POST["status"];
 
 $isLogValid = $log->validateLog();
 
 if ($isLogValid) {    
-    insertLog($log->username, $log->lognumber, $log->dateoflog, $log->training, $log->success);
+    insertLog($log->dateoflog, $log->command, $log->success);
     
     echo ('<logentry>'
-            . '<username>' . $log->username . '</username>'
-            . '<lognumber>' . $log->lognumber . '</lognumber>'
             . '<date>' . $log->dateoflog . '</date>'
-            . '<log>' . $log->training . '</log>'
+            . '<log>' . $log->command . '</log>'
             . '<status>' . $log->success . '</status>'
             . '</logentry>');
 } else {

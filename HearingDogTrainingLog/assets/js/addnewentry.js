@@ -75,11 +75,11 @@ logApp.controller('logController', ['$scope', '$http', function($scope, $http) {
     // AJAX & send data to server
     $scope.processLog = function() {            
         $http({
-            method: 'GET',
-            url: '/services/logs.php',
-            params: {"id": logID} 
-            //data: $.param($scope.logData),
-            //headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            method: 'POST',
+            url: 'files/functions/LogEntryFile.php',
+            //params: {"id": logID} 
+            data: $.param($scope.logData),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).
         then(function (response) {
            $scope.log = response.data; 
